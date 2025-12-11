@@ -18,7 +18,21 @@ while True:
             print(simbolo, end="")
         print()  # Salto de línea después de cada fila
 
-    respuesta = input("¿Quieres continuar? (SI/NO): ").upper()
+    intentos = 0
 
+    while intentos < 3:
+        respuesta = input("¿Quieres continuar? (SI/NO): ").upper()
+        
+        if respuesta == "SI" or respuesta == "NO":
+            break
+        else:
+            print("Solo tienes dos opciones: SI o NO.")
+            intentos += 1
+    
+    if intentos == 3:
+        print("Has agotado tus intentos. Saliendo...")
+        break
+    
     if respuesta == "NO":
+        print("Gracias por usar el programa. Hasta luego.")
         break
